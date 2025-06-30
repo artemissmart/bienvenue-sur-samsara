@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsara - Rejoignez l'app de rencontre consciente</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #faf8f2, #ece9e6);
+      text-align: center;
+      padding: 2rem;
+    }
+    .logo {
+      width: 120px;
+      margin: 2rem auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #1976d2;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #1259a3;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo2.png" alt="Samsara logo" class="logo">
+  <h1>Rejoignez Samsara</h1>
+  <p>L'app de rencontre qui fait grandir.</p>
+  <a href="#" id="downloadBtn" class="cta-button">Télécharger l'application</a>
+
+  <script>
+    // Récupérer le ref depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+
+    // Sauvegarder dans localStorage (ou cookies si tu préfères)
+    if (ref) {
+      localStorage.setItem('referral', ref);
+    }
+
+    // Redirection vers le store
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener('click', () => {
+      const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.samsara.app';
+      window.location.href = playStoreUrl;
+    });
+  </script>
+</body>
+</html>
