@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Samsara - Rejoignez l'app de rencontre consciente</title>
   <style>
     body {
-     font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-image: url("nature.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      height: 50vh;
-      margin: 0;
-      background-image: url("nature.png");
-      background-size: cover;
-      background-position: top;
-      background-repeat: no-repeat;
       color: white;
-
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
     }
+
     .logo {
       width: 120px;
-      margin: 2rem auto;
+      margin-bottom: 1.5rem;
     }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
     }
+
     p {
-      font-size: 1.1rem;
-      color: #444;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
+      max-width: 90%;
     }
+
     .cta-button {
-      display: inline-block;
       background-color: #1976d2;
       color: white;
       padding: 1rem 2rem;
@@ -43,32 +46,34 @@
       border-radius: 10px;
       font-size: 1.2rem;
       text-decoration: none;
+      cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     .cta-button:hover {
       background-color: #1259a3;
     }
   </style>
 </head>
 <body>
-  <img src="logo2.png" alt="Samsara logo" class="logo">
+  <!-- Logo -->
+  <img src="logo2.png" alt="Logo Samsara" class="logo" />
+
+  <!-- Titre -->
   <h1>Rejoignez Samsara</h1>
   <p>L'app de rencontre qui fait grandir.</p>
+
+  <!-- Bouton -->
   <a href="#" id="downloadBtn" class="cta-button">Télécharger l'application</a>
 
   <script>
-    // Récupérer le ref depuis l'URL
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get('ref');
-
-    // Sauvegarder dans localStorage (ou cookies si tu préfères)
     if (ref) {
       localStorage.setItem('referral', ref);
     }
 
-    // Redirection vers le store
-    const downloadBtn = document.getElementById('downloadBtn');
-    downloadBtn.addEventListener('click', () => {
+    document.getElementById('downloadBtn').addEventListener('click', () => {
       const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.samsara.app';
       window.location.href = playStoreUrl;
     });
