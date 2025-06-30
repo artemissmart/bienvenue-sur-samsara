@@ -11,15 +11,22 @@
       font-family: "Segoe UI", sans-serif;
       background-image: url("nature.png");
       background-size: cover;
-      background-position: top;
+      background-position: center;
       background-repeat: no-repeat;
-      height: 50vh;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.1); /* 10% opacity */
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(8px); /* pour un effet élégant */
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
     .logo {
@@ -28,14 +35,15 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin: 0.5rem 0;
+      color: white;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 2rem;
-      max-width: 90%;
+      color: white;
     }
 
     .cta-button {
@@ -56,15 +64,12 @@
   </style>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="logo2.png" alt="Logo Samsara" class="logo" />
-
-  <!-- Titre -->
-  <h1>Rejoignez Samsara</h1>
-  <p>L'app de rencontre qui fait grandir.</p>
-
-  <!-- Bouton -->
-  <a href="#" id="downloadBtn" class="cta-button">Télécharger l'application</a>
+  <div class="container">
+    <img src="logo2.png" alt="Logo Samsara" class="logo" />
+    <h1>Rejoignez Samsara</h1>
+    <p>L'app de rencontre qui fait grandir.</p>
+    <a href="#" id="downloadBtn" class="cta-button">Télécharger l'application</a>
+  </div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
