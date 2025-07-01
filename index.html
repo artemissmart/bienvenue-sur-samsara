@@ -73,16 +73,23 @@
   </div>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const ref = urlParams.get('ref');
-    if (ref) {
-      localStorage.setItem('referral', ref);
-    }
+  const urlParams = new URLSearchParams(window.location.search);
+  const ref = urlParams.get('ref');
 
-    document.getElementById('downloadBtn').addEventListener('click', () => {
-      const playStoreUrl ='https://play.google.com/store/apps/details?id=com.creton.samsara&pcampaignid=web_share';
-      window.location.href = playStoreUrl;
-    });
-  </script>
+  if (ref) {
+    const referralData = {
+      ref: ref,               // Nom du partenaire (ex : rachel_tiktok)
+      comInTime: Date.now()   // 🕒 Timestamp en ms nommé 'comInTime'
+    };
+
+    localStorage.setItem('referralData', JSON.stringify(referralData));
+    console.log('Referral enregistré :', referralData);
+  }
+
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.creton.samsara&pcampaignid=web_share';
+    window.location.href = playStoreUrl;
+  });
+</script>
 </body>
 </html>
