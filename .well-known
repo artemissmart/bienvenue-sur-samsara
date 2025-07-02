@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.creton.samsara",
+      "sha256_cert_fingerprints": [
+        "5D:54:66:A6:3B:AF:26:BF:0C:A5:A9:B2:09:18:EB:C1:E5:AF:F6:98:8D:4F:F1:DE:9D:9B:29:F0:6F:D6:2B:30"
+      ]
+    }
+  }
+]
